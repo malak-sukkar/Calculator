@@ -56,7 +56,7 @@ nine.onclick = function () {
 };
 let multiple = document.querySelector(".multiple");
 multiple.onclick = function () {
-  output.append("*");
+  output.append("×");
 };
 let comma = document.querySelector(".comma");
 comma.onclick = function () {
@@ -68,7 +68,7 @@ zero.onclick = function () {
 };
 let divid = document.querySelector(".divid");
 divid.onclick = function () {
-  output.append("/");
+  output.append("÷");
 };
 
 let eql = document.querySelector(".eql");
@@ -95,10 +95,10 @@ eql.onclick = function () {
   let i = 0;
   // Multiplication and division have equal priority: evaluate left to right.
   while (i < operation.length) {
-    if (operation[i] == "*" || operation[i] == "/") {
+    if (operation[i] == "×" || operation[i] == "÷") {
       const left = Number(number[i]);
       const right = Number(number[i + 1]);
-      number[i] = operation[i] == "*" ? left * right : left / right;
+      number[i] = operation[i] == "×" ? left * right : left / right;
       operation.splice(i, 1);
       number.splice(i + 1, 1);
     } else {
@@ -110,8 +110,8 @@ eql.onclick = function () {
 
   let s;
   for (let i = 0; i < operation.length; i++) {
-    if (operation[i] == "*") {
-      s = number[0] * num[1];
+    if (operation[i] == "×") {
+      s = number[0] * number[1];
       number.unshift(s);
       number.splice(1, 1);
       number.splice(1, 1);
@@ -134,7 +134,7 @@ eql.onclick = function () {
       s = 0;
       console.log(number);
     }
-    if (operation[i] == "/") {
+    if (operation[i] == "÷") {
       s = number[0] / number[1];
       number.unshift(s);
       number.splice(1, 1);
