@@ -56,7 +56,7 @@ nine.onclick = function () {
 };
 let multiple = document.querySelector(".multiple");
 multiple.onclick = function () {
-  output.append(multiple.innerHTML);
+  output.append("*");
 };
 let comma = document.querySelector(".comma");
 comma.onclick = function () {
